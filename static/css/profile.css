@@ -1,0 +1,146 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family: sans-serif;
+    background: #f5f6fa;
+    direction: rtl;
+    min-height:100vh;
+}
+.container{
+    width:90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    gap: 30px;
+}
+
+
+.profile_card{
+    width:300px;
+    background: white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow: 0 5px 20px rgb(0,0,0,0.1);
+}
+.profile_card img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.profile_menu{
+    margin-top: 45px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+.profile_menu li{
+    display: flex;
+    align-items: center;
+    padding: 18px 15px;
+    cursor: pointer;
+    color:#353434;
+    border-radius:8px;
+}
+.profile_menu li:hover{
+    background:#f5f6fa;
+    padding-right:8px;
+    transition:0.3s;
+}
+.profile_menu li i{
+    color:#4DA8DA;
+    font-size:18px;
+    margin-left: 15px; 
+}
+.profile_menu li:last-child{
+    margin-top:5px;
+}
+
+
+
+.profile_info{
+    flex:2;
+    background: white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow: 0 5px 20px rgb(0,0,0,0.1);
+}
+
+#infoForm{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+#infoForm input,
+#infoForm select{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid  #d1d5db;
+    border-radius:8px;
+    font-size: 14px;
+    transition:.3s;
+    background:#fafafa;
+}
+#infoForm input:focus,
+#infoForm select:focus{
+    outline: none;
+    border-color: #6c8cff;
+    box-shadow: 0 0 0 3px rgba(108,140,255,.2);
+    background:#fff;
+}
+.form_group label{
+    font-size:14px;
+    font-weight:600;
+    color:#444;
+}
+#infoForm input::placeholder{
+    color:#999;
+}
+
+
+.form_grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+.form_group{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.btn_box{
+    display:flex;
+    align-items:flex-end;
+    padding-top:27px;
+}
+.btn-primary{
+    width:140px;
+    padding:10px 15px;
+    border: none;
+    border-radius: 10px;
+    background:#1877F2;
+    color:white;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgb(0,0,0,0.2);
+}
+.btn-primary:hover{
+    background:#1b4bf5
+}
+
+
+@media(max-width:768px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .form_grid{
+        grid-template-columns:1fr;
+    }
+
+}
