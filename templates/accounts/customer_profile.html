@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMS</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="static/css/customer_profile.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </head>
+    <body>
+        <header class="topbar">
+            <nav>
+                <ul>
+                    <li><a href="#">داشبورد</a></li>
+                    <li><a href="#">خدمات</a></li>
+                    <li><a href="customer_profile.html">پروفایل</a></li>
+                </ul>
+            </nav>
+            <div class="logo">
+                <h2>AMS</h2>
+            </div>
+
+        </header>
+
+          <div class="container">
+            <div class="profile_card">
+                <img  src="static/imgs/download.jpg"/><br>
+                <h2>ملیکا افتخاری</h2>
+                <p>مشتری</p>
+
+                <ul class="profile_menu">
+                  <li><i class="fa-solid fa-house"></i>داشبورد</li>
+                  <li><i class="fa-solid fa-user"></i>اطلاعات کاربری من</li>
+                  <li><i class="fa-solid fa-calendar-check"></i>نوبت های من</li>
+                  <li><i class="fa-solid fa-right-from-bracket"></i>خروج</li>
+                </ul>
+            </div>
+            <div class="profile_info">
+                <form id="infoForm">    
+                 <div class="form_title">
+                    <h2 class>اطلاعات کاربری</h2>
+                 </div>
+                 <div class="form_grid">
+                   <div class="form_group">
+                     <label for="full_name"> نام و نام خانوادگی</label>
+                     <input id="full_name" type="text" name="full_name" placeholder="نام و نام خانوادگی خود را وارد کنید"><br>
+                   </div>
+
+                   <div class="form_group">
+                     <label for="username" >نام کاربری</label>
+                     <input id="username" type="text" name="username"><br>
+                   </div>
+                 
+                   <div class="form_group">
+                     <label for="phone_number">شماره تماس</label>
+                     <input id="phone_number" type="tel" name="phone_number"><br>
+                   </div>
+
+                   <div class="form_group">
+                     <label for="email">ایمیل</label>
+                     <input id="email" type="email" name="email" placeholder="ایمیل خود را وارد کنید(اختیاری)"><br>
+                   </div>
+
+                   <div class="form_group">
+                   <label for="ostan">استان</label>
+                    <select id="ostan">
+                      <option>یک استان انتخاب کنید</option>
+                    </select><br>
+                   </div>
+
+                   <div class="form_group">
+                    <label for="shahr">شهر</label>
+                    <select id="shahr">
+                     <option>اول یک استان انتخاب کنید</option>
+                    </select><br>
+                   </div>
+
+                   <div class="form_group">
+                     <label for="gender">جنسیت</label>
+                      <select id="gender" name="gender">
+                       <option value="">انتخاب کنید</option>
+                       <option value="female" >زن</option>
+                       <option value="male">مرد</option>
+                      </select><br>
+                   </div>
+
+                   <div class="btn_box form_group">
+                     <button type="submit" class="btn-primary">
+                       <i>ذخیره تغییرات</i>
+                     </button>
+                   </div>
+                 </div>
+               </form>
+            </div>
+          </div>
+
+        <footer>
+
+        </footer>
+        
+
+    </body>
+    <script src="js/app.js"></script>
+</html>
