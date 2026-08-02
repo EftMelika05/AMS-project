@@ -27,15 +27,16 @@ class ProviderProfile(models.Model):
         related_name='provider_profile'
     )
 
-    full_name=models.CharField(max_length=100)
+    full_name=models.CharField(max_length=100 , blank=True)
 
-    province=models.CharField(max_length=50)
+    province=models.CharField(max_length=50 , blank=True)
 
-    city=models.CharField(max_length=50)
+    city=models.CharField(max_length=50 , blank=True)
 
     gender=models.CharField(
         max_length=10,
-        choices=GENDER_CHOISE,  
+        choices=GENDER_CHOISE,
+        blank=True  
     )
 
     profie_image=models.ImageField(
@@ -46,7 +47,8 @@ class ProviderProfile(models.Model):
 
     Specialities=models.ManyToManyField(
         Speciality,
-        related_name='providers'
+        related_name='providers' ,
+        blank=True
     )
 
     bio=models.TextField(
@@ -56,6 +58,7 @@ class ProviderProfile(models.Model):
     experience=models.PositiveBigIntegerField(
         default=0,
         help_text="سابقه کاری برحسب سال"
+        
     )
 
     is_verified=models.BooleanField(
@@ -68,5 +71,5 @@ class ProviderProfile(models.Model):
     
 
     def __str__(self):
-        return self.full_name
+        return self.user | self.full_name
 

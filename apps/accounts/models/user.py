@@ -1,6 +1,11 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.core.validators import RegexValidator
 
+phone_validators=RegexValidator(
+    regex=r"^09\d{9}$" ,
+    message="phone number must be in 09********* format"
+)
 class User(AbstractUser):
     
     CUSTOMER='customer'
@@ -13,7 +18,8 @@ class User(AbstractUser):
 
     phone_number=models.CharField(
     max_length=11,
-    unique=True
+    unique=True ,
+    validators=[phone_validators]
     )
 
     role=models.CharField(
@@ -25,5 +31,5 @@ class User(AbstractUser):
 
 
     def __str__(self):
-        return self.username
+        return self.phone_number | self.username
 

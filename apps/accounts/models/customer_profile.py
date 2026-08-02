@@ -20,7 +20,7 @@ class CustomerProfile(models.Model):
         related_name='customer_profile'
     )
 
-    full_name=models.CharField(max_length=100)
+    full_name=models.CharField(max_length=100 , blank=True)
 
     gender=models.CharField(
         max_length=10,
@@ -28,13 +28,13 @@ class CustomerProfile(models.Model):
         blank=True
     )
 
-    province=models.CharField(max_length=50)
+    province=models.CharField(max_length=50 , blank=True)
 
-    city=models.CharField(max_length=50)
+    city=models.CharField(max_length=50 , blank=True)
 
 
     def __str__(self):
-        return self.full_name
+        return self.user | self.full_name
 
 
 
