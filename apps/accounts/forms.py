@@ -43,6 +43,7 @@ class LoginForm(forms.Form):
     password=forms.CharField()
 
 
+'''
 class ResetpassForm(forms.Form):
 
     phone_number=forms.CharField()
@@ -52,7 +53,7 @@ class ResetpassForm(forms.Form):
 
     def clean(self):
 
-        self.cleaned_data=super().clean()
+        cleaned_data=super().clean()
 
         new_password=cleaned_data.get("new_password")
         confirm_new_password=cleaned_data.get("confirm_new_password")
@@ -65,4 +66,4 @@ class ResetpassForm(forms.Form):
             
         return cleaned_data
 
-
+'''

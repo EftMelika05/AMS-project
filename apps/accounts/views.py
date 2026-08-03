@@ -109,6 +109,7 @@ def logout_view(request):
     return redirect("login")
 
 
+'''
 def resetpassword_view(request):
 
     if request.methood == "POST" :
@@ -128,3 +129,5 @@ def resetpassword_view(request):
 
 
     else:
+
+'''
