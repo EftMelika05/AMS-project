@@ -33,4 +33,36 @@ class RegisterForm(forms.ModelForm):
 
         return cleaned_data
 
+    
+
+class LoginForm(forms.Form):
+
+    username=forms.CharField(
+        max_length=150
+    )
+    password=forms.CharField()
+
+
+class ResetpassForm(forms.Form):
+
+    phone_number=forms.CharField()
+
+    new_password=forms.CharField()
+    confirm_new_password=forms.CharField()
+
+    def clean(self):
+
+        self.cleaned_data=super().clean()
+
+        new_password=cleaned_data.get("new_password")
+        confirm_new_password=cleaned_data.get("confirm_new_password")
+
+        if new_password and confirm_new_password :
+            if new_password != confirm_new_password :
+                raise forms.ValidationError(
+                    "passwords do not match"
+                )
+            
+        return cleaned_data
+
 
