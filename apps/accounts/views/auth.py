@@ -1,8 +1,8 @@
 from django.shortcuts import render , redirect
-from .forms import RegisterForm ,LoginForm , ResetpassForm
-from .models.user import User
-from .models.customer_profile import CustomerProfile
-from .models.provider_profile import ProviderProfile
+from apps.accounts.forms import RegisterForm ,LoginForm , ResetpassForm
+from apps.accounts.models.user import User
+from apps.accounts.models.customer_profile import CustomerProfile
+from apps.accounts.models.provider_profile import ProviderProfile
 from django.contrib import messages
 from django.contrib.auth import authenticate , login ,logout
 

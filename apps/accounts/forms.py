@@ -1,5 +1,7 @@
 from django import forms
 from .models.user import User
+from .models.customer_profile import CustomerProfile
+from .models.provider_profile import ProviderProfile
 from django.core.exceptions import ValidationError
 
 class RegisterForm(forms.ModelForm):
@@ -67,3 +69,29 @@ class ResetpassForm(forms.Form):
         return cleaned_data
 
 '''
+
+
+class CustomerProfile(forms.ModelForm):
+
+    class Meta:
+
+        model=CustomerProfile
+
+        fields=[
+            "full_name" ,
+            "gender" ,
+            "province" ,
+            "city" 
+        ]
+
+
+class ProviderProfile(forms.ModelForm):
+
+    class Meta:
+
+       model=ProviderProfile
+
+        fields=[
+            ""
+
+        ]
