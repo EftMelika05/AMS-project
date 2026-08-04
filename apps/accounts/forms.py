@@ -71,7 +71,7 @@ class ResetpassForm(forms.Form):
 '''
 
 
-class CustomerProfile(forms.ModelForm):
+class CustomerProfileForm(forms.ModelForm):
 
     class Meta:
 
@@ -85,13 +85,20 @@ class CustomerProfile(forms.ModelForm):
         ]
 
 
-class ProviderProfile(forms.ModelForm):
+class ProviderProfileForm(forms.ModelForm):
 
     class Meta:
 
        model=ProviderProfile
 
-        fields=[
-            ""
+       fields=[
+          "full_name" ,
+          "province" ,
+          "city" ,
+          "gender" ,
+          "profie_image" ,
+          "Specialities" ,
+          "bio" ,
+          "experience"
 
         ]
