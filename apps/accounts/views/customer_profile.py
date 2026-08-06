@@ -1,7 +1,10 @@
 from django.shortcuts import render , redirect
 from apps.accounts.forms.customer_profile_form import CustomerProfileForm
 from django.contrib.auth.decorators import login_required
+from apps.accounts.decorators import customer_required
 
+
+@customer_required
 @login_required
 def CustomerProfile_view(request):
 
