@@ -1,14 +1,35 @@
 from django.shortcuts import render , redirect
-from apps.accounts.forms.register_form import RegisterForm
-from apps.accounts.forms.login_form import LoginForm
 from apps.accounts.forms.customer_profile_form import CustomerProfileForm
-from apps.accounts.forms.provider_profile_form import ProviderProfileForm
-from apps.accounts.models.user import User
-from apps.accounts.models.customer_profile import CustomerProfile
-from apps.accounts.models.provider_profile import ProviderProfile
-from django.contrib import messages
-from django.contrib.auth import authenticate , login ,logout
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def CustomerProfile_view(request):
- pass
+
+ if request.method=="POST":
+
+   form=CustomerProfileForm(
+     request.POST ,
+     instance=request.user.customer_profile
+   )
+
+   if form.is_valid():
+      
+      form.save()
+
+      return redirect("customer_profile")
+
+   
+  
+ else:
+   
+   form=CustomerProfileForm(
+     instance=request.user.customer_profile
+   )
+
+ return render(
+      request , 
+     "accounts/customer_profile.html",
+     {
+       "form":form
+     }
+  )
