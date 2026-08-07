@@ -69,7 +69,7 @@ def CreateService_view(request):
 
     return render(
         request ,
-        "service/create_service.html",
+        "services/create_service.html",
         {
             "form":form
         }

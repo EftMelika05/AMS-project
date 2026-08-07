@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from apps.accounts.decorators import customer_required
 
 
-@customer_required
 @login_required
+@customer_required
 def CustomerProfile_view(request):
 
  if request.method=="POST":
@@ -19,9 +19,7 @@ def CustomerProfile_view(request):
       
       form.save()
 
-      return redirect("customer_profile")
-
-   
+      return redirect("customer_profile") 
   
  else:
    
