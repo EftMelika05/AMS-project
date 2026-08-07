@@ -4,7 +4,7 @@ from apps.accounts.decorators import customer_required , provider_required
 
 @customer_required
 @login_required
-def cusstomer_dashboard(request):
+def CustomerDashboard_view(request):
     return render(
         request ,
         "dashboard/customer_dashboard.html"
@@ -13,7 +13,7 @@ def cusstomer_dashboard(request):
 
 @provider_required
 @login_required
-def provider_dashboard(request):
+def ProviderDashboard_view(request):
     return render(
         request ,
         "dashboard/provider_dashboard.html"
